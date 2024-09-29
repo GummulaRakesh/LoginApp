@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE html>
+<html>
+    <body>
+        {% csrf_token %}
+        <h1> Hi Raks Welcome to Website </h1>
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <input type="submit" value="Logout">
+            <a href="{% url 'delete_account' %}">Delete Account</a>
+    </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container for the content */
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+        }
+
+        /* Header styles */
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Logout button in form */
+        form {
+            display: inline-block;
+        }
+
+        /* Delete Account link styles */
+        a {
+            color: #dc3545;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hi Raks, Welcome to the Website!</h1>
+
+        <!-- Logout Form -->
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn">Logout</button>
+        </form>
+
+        <!-- Delete Account Link -->
+        <a href="{% url 'delete_account' %}">Delete Account</a>
+    </div>
+</body>
+</html>

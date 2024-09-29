@@ -1,0 +1,308 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .signup-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .form-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .form-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .form-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="signup-container">
+    <h1>Signup</h1>
+    <form method="POST" onsubmit="return validateForm()">
+        {% csrf_token %}
+        <label for="username">User Name:</label>
+        <input type="text" id="username" name="username" placeholder="Enter Username">
+
+        <label for="email">Email ID:</label>
+        <input type="text" id="email" name="Email1" placeholder="Enter Email ID">
+
+        <label for="mobilenumber">Mobile Number:</label>
+        <input type="text" id="mobilenumber" name="Mobilenumber" placeholder="Enter Mobile Number">
+
+        <label for="password1">Password:</label>
+        <input type="password" id="password1" name="Password1" placeholder="Enter Password">
+
+        <label for="password2">Confirm Password:</label>
+        <input type="password" id="password2" name="Password2" placeholder="Enter Confirm Password">
+
+        <input type="submit" value="Signup">
+    </form>
+    
+    <div class="form-link">
+        <p><a href="{% url 'login' %}">Already have an account? Login</a></p>
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var mobilenumber = document.getElementById("mobilenumber").value;
+        var password1 = document.getElementById("password1").value;
+        var password2 = document.getElementById("password2").value;
+
+        if (username === "" || email === "" || mobilenumber === "" || password1 === "" || password2 === "") {
+            alert("All fields must be filled out");
+            return false;
+        }
+
+        if (password1 !== password2) {
+            alert("Passwords do not match");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .signup-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .form-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .form-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .form-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+
+        .toggle-password {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle-password input {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="signup-container">
+    <h1>Signup</h1>
+    <form method="POST" onsubmit="return validateForm()">
+        {% csrf_token %}
+        <label for="username">User Name:</label>
+        <input type="text" id="username" name="username" placeholder="Enter Username">
+
+        <label for="email">Email ID:</label>
+        <input type="text" id="email" name="Email1" placeholder="Enter Email ID">
+
+        <label for="mobilenumber">Mobile Number:</label>
+        <input type="text" id="mobilenumber" name="Mobilenumber" placeholder="Enter Mobile Number">
+
+        <label for="password1">Password:</label>
+        <input type="password" id="password1" name="Password1" placeholder="Enter Password">
+
+        <label for="password2">Confirm Password:</label>
+        <input type="password" id="password2" name="Password2" placeholder="Enter Confirm Password">
+
+        <div class="toggle-password">
+            <label for="show-password">Show Password</label>
+            <input type="checkbox" id="show-password" onclick="togglePasswordVisibility()">
+        </div>
+
+        <input type="submit" value="Signup">
+    </form>
+
+    <div class="form-link">
+        <p><a href="{% url 'login' %}">Already have an account? Login</a></p>
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var mobilenumber = document.getElementById("mobilenumber").value;
+        var password1 = document.getElementById("password1").value;
+        var password2 = document.getElementById("password2").value;
+
+        if (username === "" || email === "" || mobilenumber === "" || password1 === "" || password2 === "") {
+            alert("All fields must be filled out");
+            return false;
+        }
+
+        if (password1 !== password2) {
+            alert("Passwords do not match");
+            return false;
+        }
+
+        return true;
+    }
+
+    function togglePasswordVisibility() {
+        var password1 = document.getElementById("password1");
+        var password2 = document.getElementById("password2");
+        var showPassword = document.getElementById("show-password");
+
+        if (showPassword.checked) {
+            password1.type = "text";
+            password2.type = "text";
+        } else {
+            password1.type = "password";
+            password2.type = "password";
+        }
+    }
+</script>
+
+</body>
+</html>
